@@ -16,7 +16,7 @@
     font-family: spotifyMedium;
     font-weight: normal;
     font-style: normal;
-    src: url(../SpotifyProject/Spotify-Font/GothamMedium_1.ttf);
+    src: url(../SpotifyProject/Spotify-Font/GothamMedium_1.ttf) format('truetype');
 }
 
 @font-face {
