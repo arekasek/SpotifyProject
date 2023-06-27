@@ -1,0 +1,241 @@
+:root {
+    --green: #1db954;
+    --black: #121212;
+    --light_grey: #b3b3b3;
+    --grey: #535353;
+    --dark_grey: #212121;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: spotifyMedium;
+    src: url(/Spotify-Font/GothamMedium_1.ttf);
+}
+
+@font-face {
+    font-family: spotifyBold;
+    src: url(/Spotify-Font/Gotham-Bold.otf);
+}
+
+.full {
+    width: 100%;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--black);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+    padding: 10px;
+    grid-gap: 10px;
+    overflow: auto;
+}
+
+body > .box {
+    background-color: var(--dark_grey);
+    border-radius: 0.5em;
+}
+
+body > .box-header {
+    font-family: spotifyMedium;
+    grid-row: 1;
+    grid-column: 1 / 3;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+}
+
+.header-menu li {
+    list-style-type: none;
+    margin: 1rem;
+    font-size: 16px;
+    line-height: 25.6px;
+    letter-spacing: normal;
+    text-align: left;
+    content: '';
+    background-repeat: no-repeat;
+    background-position: left center;
+    color: var(--light_grey);
+    padding-left: 2.5rem;
+    background-size: contain;
+    margin-bottom: 25px;
+}
+
+.header-menu li:first-child {
+    background-image: url("images/home-icon.png");
+}
+
+.header-menu li:hover {
+    cursor: pointer;
+    color: white;
+    transition: 0.7s;
+}
+
+.header-menu li:active {
+    color: white;
+}
+
+.header-menu li:last-child {
+    background-image: url("images/lupa-icon.png");
+}
+
+body > .box-main {
+    grid-row: 1 / fit-content;
+    grid-column: 3 / fit-content;
+    padding: 1rem;
+    min-width: 300px;
+    overflow: auto;
+}
+
+body > .box-left {
+    grid-row: 2 / fit-content;
+    grid-column: 1 / 3;
+}
+
+.box-main > .panel-heading {
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    position: -webkit-sticky;
+    position: sticky;
+}
+
+.arrow {
+    max-width: 32px;
+    min-height: 32px;
+}
+
+.arrow-left {
+    transform: rotate(180deg);
+}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+ul.topnav > li {
+    float: left;
+    margin: 0.2rem;
+}
+
+.btn {
+    font-family: spotifyBold;
+    padding: 4px 16px 4px 16px;
+    font-weight: 700;
+    white-space: nowrap;
+    word-spacing: 0px;
+    cursor: pointer;
+    background-color: #F6F6F6;
+    font-size: 14px;
+    border-radius: 500px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 32px;
+    min-height: 32px;
+}
+
+ul.topnav > .btn-premium {
+    background-color: #F6F6F6;
+    float: right;
+}
+
+ul.topnav > .btn-premium > a {
+    color: black;
+}
+
+ul.topnav > .btn-apk > a {
+    color: white;
+}
+
+ul.topnav > .btn-apk {
+    background-color: #00000054;
+    float: right;
+}
+
+ul.topnav > .btn-premium:hover,
+.btn-apk:hover {
+    transform: matrix(1.04, 0, 0, 1.04, 0, 0);
+    transition: all 0s ease 0s;
+}
+
+ul.topnav > li > a {
+    text-decoration: none;
+}
+
+.welcm {
+    margin-top: 10px;
+}
+
+.welcm > h2 {
+    font-family: spotifyBold;
+    font-size: 32px;
+    display: inline-block;
+    color: white;
+}
+
+.playlists-container {
+    margin-top: 30px;
+    height: fit-content;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,3fr);
+    column-gap: 1.5rem;
+    row-gap: 1rem;
+}
+
+.playlist {
+    background-color: blue;
+    padding: 2rem;
+    height: 10vh;
+    background-color:  rgb(255,255,255,0.2);
+    border-radius: 4px;
+    display: block;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 1200px) {
+    .playlists-container{
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+@media only screen and (max-width: 872px) {
+    body {
+      grid-template-columns: 1fr;
+      grid-template-rows: max-content;
+    }
+  
+    body > .box-header {
+      grid-row: 1;
+      grid-column: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn-apk, .btn-premium, .arrow-back{
+        display: none;
+    }
+    body > .box-main {
+      grid-row: 2 / 6;
+      grid-column: 1;
+    }
+  
+    body > .box-left {
+      grid-row: 6 / 9;
+      grid-column: 1;
+    }
+  }
+  
