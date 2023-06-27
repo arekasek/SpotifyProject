@@ -23,7 +23,7 @@
     font-family: spotifyBold;
     font-weight: normal;
     font-style: normal;
-    src: url(../SpotifyProject/Spotify-Font/Gotham-Bold.otf);
+    src: url(../SpotifyProject/Spotify-Font/Gotham-Bold.otf) format('truetype');
 }
 
 .full {
