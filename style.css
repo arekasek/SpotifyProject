@@ -188,7 +188,7 @@ ul.topnav > li > a {
 
 .playlists-container {
     margin-top: 30px;
-    height: fit-content;
+    min-height: fit-content;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3,3fr);
@@ -198,14 +198,37 @@ ul.topnav > li > a {
 
 .playlist {
     background-color: blue;
-    padding: 2rem;
-    height: 10vh;
+    min-height: 100px;
     background-color:  rgb(255,255,255,0.2);
     border-radius: 4px;
-    display: block;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.pl-icon{
+    left: 0px;
+    height: 100%;
+    width: 100px;
+}
+.pl-icon img{
+    object-fit: cover;
+    width: 100px;
+    height: 100%;
+    border-radius: 4px 0 0 4px;
+    -webkit-box-shadow: 10px 0px 41px -8px rgba(0,0,0,0.43);
+    -moz-box-shadow: 10px 0px 41px -8px rgba(0,0,0,0.43);
+    box-shadow: 10px 0px 41px -8px rgba(0,0,0,0.43);
+}
+.pl-title{
+    margin-left: 1rem;
+    width: 100%;
+    line-height: 25.6px;
+    font-size: 16px;
+    font-family: spotifyBold;
+    color: white;
+    
 }
 
-/* Media Queries */
 @media only screen and (max-width: 1200px) {
     .playlists-container{
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
