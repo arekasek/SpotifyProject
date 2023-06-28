@@ -17,6 +17,7 @@
     font-weight: normal;
     font-style: normal;
     src: url(../SpotifyProject/Spotify-Font/GothamMedium_1.ttf) format('truetype');
+    /*src: url(/Spotify-Font/GothamMedium_1.ttf) format('truetype');*/
 }
 
 @font-face {
@@ -24,6 +25,7 @@
     font-weight: normal;
     font-style: normal;
     src: url(../SpotifyProject/Spotify-Font/Gotham-Bold.otf) format('truetype');
+    /*src: url(/Spotify-Font/Gotham-Bold.otf) format('truetype');*/
 }
 
 .full {
@@ -39,9 +41,8 @@ body {
     grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
     padding: 10px;
     grid-gap: 10px;
-    overflow: auto;
+    -ms-overflow-style: none;
 }
-
 body > .box {
     background-color: var(--dark_grey);
     border-radius: 0.5em;
@@ -89,14 +90,44 @@ body > .box-header {
 .header-menu li:last-child {
     background-image: url("images/lupa-icon.png");
 }
-
-body > .box-main {
+.box-main {
     grid-row: 1 / fit-content;
     grid-column: 3 / fit-content;
     padding: 1rem;
     min-width: 300px;
     overflow: auto;
-}
+    scrollbar-width: none;
+  }
+  
+  .box-main::-webkit-scrollbar {
+    background-color: transparent;
+    width: 12px;
+    border-radius: 10px;
+    visibility: hidden;
+  }
+  
+  .box-main::-webkit-scrollbar-track {
+    border-radius: 10px;
+    visibility: hidden;
+  }
+  
+  .box-main::-webkit-scrollbar-thumb {
+    background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(.5, #a520ca),
+      color-stop(1, #2681cc)
+    );
+    border-radius: 10px;
+    visibility: hidden;
+  }
+  
+  .box-main:hover::-webkit-scrollbar,
+  .box-main:hover::-webkit-scrollbar-track,
+  .box-main:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+  }
 
 body > .box-left {
     grid-row: 2 / fit-content;
@@ -190,6 +221,16 @@ ul.topnav > li > a {
     color: white;
 }
 
+.yrpl{
+    margin: 2em 0 1.2em 0;
+}
+.yrpl > h2{
+    font-family: spotifyBold;
+    font-size: 24px;
+    display: inline-block;
+    color: white;
+}
+
 .playlists-container {
     margin-top: 30px;
     min-height: fit-content;
@@ -201,7 +242,6 @@ ul.topnav > li > a {
 }
 
 .playlist {
-    background-color: blue;
     min-height: 100px;
     background-color:  rgb(255,255,255,0.2);
     border-radius: 4px;
@@ -209,6 +249,27 @@ ul.topnav > li > a {
     align-items: center;
     cursor: pointer;
 }
+.yrplaylist{
+    min-height: 200px;
+    background-color: #b3b3b30c;
+    border-radius: 8px;
+    display: flex;
+    min-width: 200px;
+    align-items: center;
+    cursor: pointer;
+}
+.yrplaylist-container {
+    margin-top: 30px;
+    min-height: fit-content;
+    width: 100%;
+    display: grid;
+    column-gap: 2.5rem;
+    row-gap: 1rem;
+    overflow-y: scroll;
+    grid-template-columns: repeat(6, minmax(200px,auto));
+}
+
+
 .pl-icon{
     left: 0px;
     height: 100%;
@@ -216,6 +277,7 @@ ul.topnav > li > a {
 }
 .pl-icon img{
     object-fit: cover;
+    clip: auto;
     width: 100px;
     height: 100%;
     border-radius: 4px 0 0 4px;
@@ -235,7 +297,7 @@ ul.topnav > li > a {
 
 @media only screen and (max-width: 1200px) {
     .playlists-container{
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 }
 @media only screen and (max-width: 872px) {
