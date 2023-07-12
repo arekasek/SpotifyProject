@@ -16,14 +16,14 @@
     font-family: spotifyMedium;
     font-weight: normal;
     font-style: normal;
-    src: url(../SpotifyProject/Spotify-Font/GothamMedium_1.ttf) format('truetype');
+    src: url("../SpotifyProject/Spotify-Font/GothamMedium_1.ttf") format('truetype');
 }
 
 @font-face {
     font-family: spotifyBold;
     font-weight: normal;
     font-style: normal;
-    src: url(../SpotifyProject/Spotify-Font/Gotham-Bold.otf) format('truetype');
+    src: url("../SpotifyProject/Spotify-Font/Gotham-Bold.otf") format('truetype');
 }
 
 .full {
